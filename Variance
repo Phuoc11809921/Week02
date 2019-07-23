@@ -1,0 +1,35 @@
+# Phương sai (variance) cho ta biết các giá trị trong tập dữ liệu có khác biệt nhiều với giá trị trung bình của cả tập hay không? Đánh giá mức độ phân tán của dữ liệu so với giá trị trung bình. Nếu muốn tính độ lệch chuẩn chỉ cần lấy căn bậc hai của phương sai.
+# Công thức của variance: Lấy từng giá trị của tập dữ liệu trừ cho giá trị trung bình của cả tập, bình phương và chia cho số lượng phần tử có trong chuỗi.
+#1. Trong công thức cần phép tính trung bình nên ta dùng lại hàm calculate_mean() phía trên.
+#2. Xác định hàm cần tìm, đặt đến là caculate_variance, hàm nhận đối số numbers cho trước.
+#3. Tính giá trị trung bình của dãy numbers cho trước, đại diện bởi biến mean.
+#4. Tạo mảng diff rỗng, với mỗi giá trị của dãy numbers, đem trừ cho mean rồi bỏ kết quả vào mảng diff
+#5. Tạo mảng squared_diff rỗng, với mỗi giá trị của mảng diff ở bước 4, bình phương mỗi giá trị, cộng dồn toàn bộ giá trị của mảng và chia cho chiều dài của mảng.
+#6. Trả kết quả phương sai.
+
+# data
+points = [7, 8, 9, 2, 10, 9, 9, 9, 9, 4, 5, 6, 1, 5, 6, 7, 8, 6, 1, 10]
+
+def calculate_mean(numbers):            #1
+    s = sum(numbers)
+    N = len(numbers)
+    mean = s/N
+    return mean
+
+def calculate_variance(numbers):        #2
+    mean = calculate_mean(numbers)      #3
+
+    diff = []                           #4
+    for num in numbers:
+        diff.append(num - mean)
+
+    squared_diff = []                   #5
+    for d in diff:
+        squared_diff.append(d**2)
+        sum_squared_diff = sum(squared_diff)
+        variance = sum_squared_diff / len(numbers)
+
+    return variance
+
+print('Phuong sai cua day so la: ', calculate_variance(points))
+print('Do lech chuan cua day so la: ', calculate_variance(points)**0.5)
