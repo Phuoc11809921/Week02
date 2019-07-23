@@ -1,0 +1,15 @@
+# Độ phân tán (range) của dữ liệu cho biết dữ liệu chúng ta có giá trị trải rộng như thế nào. Ví dụ, nếu chỉ quan tâm đến trung bình thì có khi ta đánh giá sai dữ liệu. Độ phân tán dữ liệu đơn giản là độ lệch giữa giá trị lớn nhất và giá trị nhỏ nhất của tập dữ liệu.
+#1. Xác đinh hàm cần tìm, đặt đến là find_range, hàm nhận đối số numbers cho trước.
+#2. Dùng hàm min tính giá trị nhỏ nhất của list numbers, đại diện bởi biến `lowest`.
+#3. Dùng hàm max tính giá trị lớn nhất của list numbers, đại diện bởi biến highest.
+#4. Tính range của list numbers bằng cách lấy giá trị lớn nhất trừ giá trị nhỏ nhất, đại diện bởi biến r.
+
+def find_range(numbers):        #1
+    lowest = min(numbers)       #2
+    highest = max(numbers)      #3
+    r = highest - lowest        #4
+    print('Lowest: {0}\tHighest: {1}\tRange: {2}'.format(lowest, highest, r))
+
+# data
+points = [7, 8, 9, 2, 10, 9, 9, 9, 9, 4, 5, 6, 1, 5, 6, 7, 8, 6, 1, 10,6, 6]
+find_range(points)
