@@ -1,0 +1,28 @@
+#Median: Số trung vị là một số đứng ở vị trí giữa trong dãy số đã được sắp xếp theo thứ tự tăng dần, median chia dãy số cho trước thành 2 nửa bằng nhau. Nếu độ dài của dãy số là số lẻ, thì số ở giữa là median, nếu chiều dài của dãy số là số chẵn thì median được xác định bằng cách lấy trung bình của hai số ở giữa.
+#1. Xác định hàm cần tính, đặt tên calculate_median; hàm này sẽ nhận đối số là chuỗi số numbers.
+#2. Tính chiều dài của chuỗi số numbers, đại diện bởi biến N
+#3. Sắp xếp chuỗi số numbers từ nhỏ đến lớn.
+#4. Tính median: Nếu chiều dài của chuỗi số numbers là số lẻ, thì số trung vị là số ở vị trí chính giữa, nghĩa là (N + 1)/2. Nếu chiều dài của numbers là số chẵn thì lấy 2 phần tử ở giữa là N/2 và (N/2) + 1, đại diện bởi biến m1 và m2. Sau đó, lấy phần nguyên của phép chia rồi trừ một để lấy được vị trí của 2 phần tử. Cuối cùng ta lấy giá trị trung bình của 2 phần từ vừa tìm được.
+#5. Hàm trả về giá trị trung vị tính ở bước 4
+#7 Tra ve vi tri trong mang
+
+def calculate_median(numbers):      #1
+    N = len(numbers)                #2
+    numbers.sort()                  #3
+    if N % 2 == 0:                  #4
+        m1 = N/2
+        m2 = (N/2) + 1
+        m1 = int(m1) - 1            #7
+        m2 = int(m2) - 1
+        median = (numbers[m1] + numbers[m2])/2
+    else:                           #5
+        m = (N+1)/2
+        m = int(m) - 1
+        median = numbers[m]
+    return median                   #6
+
+#donations = np.array([100, 60, 70, 900, 100, 200, 500, 500, 503, 600, 1000, 1200])
+donations = [100, 60, 70, 900, 100, 200, 500, 500, 503, 600, 1000, 1200]
+median_value = calculate_median(donations)
+
+print('Trung vi so tien quyen gop la: ',median_value)
