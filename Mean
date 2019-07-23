@@ -1,0 +1,22 @@
+# Mean: Gia tri trung binh
+#1. Bước đầu tiên ta xác định hàm cần tính, đặt tên là calculate_mean(), hàm này sẽ nhận đối số numbers, là chuỗi các số cần tính trung bình.
+#2. Sử dụng hàm sum() để tính tổng dãy số cho trước.
+#3. Sử dụng hàm len() để tính chiều dài của dãy số cần tính.
+#4. Tính trung bình của dãy số trên bằng cách lấy tổng chia cho chiều dài.
+#5. Cuối cùng ta cho hàm trả về giá trị mean tính được.
+
+import time
+def calculate_mean(numbers):    #1
+    s = sum(numbers)            #2
+    N = len(numbers)            #3
+    mean = s/N                  #4
+    return mean                 #5
+
+start = time.time()
+print("Thoi gian bat dau la: ",start)
+donations = [100, 60, 70, 900, 100, 200, 500, 500, 503, 600, 1000, 1200]
+
+mean_value = calculate_mean(donations)
+
+print('Trung binh so tien quyen gop la: ',mean_value)
+print('Thoi gian tinh ham mean bang ham calculate_mean la: ',(time.time() - start)*1000)
