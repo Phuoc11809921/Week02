@@ -1,0 +1,95 @@
+# Hàm random.random() sinh ra số ngẫu n có phân bố đều (uniform distribution) trong khoảng `[0,1)` (không bao gồm số 1).
+# Mặt sau xuất hiện khi n < 0.5. Điều này đồng nghĩa với việc miền giá trị cho việc mặt sau xuất hiện là một đoạn [0, 0.5). Lập luận tương tự, miền giá trị cho việc mặt trước xuất hiện là [0.5, 1).
+
+import random
+
+# tong so lan bung dong xu
+total_flips = 0
+
+# so lan mat sau xuat hien
+num_tails = 0
+
+# so lan mat truoc xuat hien
+num_heads = 0
+
+for _ in range(1000):
+    # sinh so ngau nhien trong khoang [0,1]
+    n = random.random()
+    if n < 0.5:
+        num_tails = num_tails + 1
+    else:
+        num_heads = num_heads + 1
+    # code vi tri nay khong thuoc khoi else
+    total_flips = total_flips + 1
+
+print('Total_flips: %d' % total_flips)
+print('Num_tails: %d' % num_tails)
+print('Num_heads: %d' % num_heads)
+
+# Con xúc xắc có 6 mặt (mặt số 1 đến số 6). Viết chương trình mô phỏng ném con xúc xắc 10000 lần và đếm số lần xuất hiện của mỗi mặt.
+
+import random
+
+# tong so lan gieo xuc xac
+total_flips = 0
+
+# so lan cac mat cua xuc xac xuat hien
+num_1 = 0
+num_2 = 0
+num_3 = 0
+num_4 = 0
+num_5 = 0
+num_6 = 0
+
+for _ in range(10000):
+    # sinh so ngau nhien trong khoang [1,6]
+    n = random.randint(1,6)
+    if n == 1:
+        num_1 += 1
+    elif(n == 2):
+        num_2 += 1
+    elif(n == 3):
+        num_3 += 1
+    elif(n == 4):
+        num_4 += 1
+    elif (n == 5):
+        num_5 += 1
+    elif (n == 6):
+        num_6 += 1
+    total_flips += 1
+print('Total_flips: %d' % total_flips)
+print('Num_1: %d' % num_1)
+print('Num_2: %d' % num_2)
+print('Num_3: %d' % num_3)
+print('Num_4: %d' % num_4)
+print('Num_5: %d' % num_5)
+print('Num_6: %d' % num_6)
+
+# While break
+
+import random
+
+# cho vong lap chay vo tan
+while True:
+    # sinh so ngau nhien trong khoang [0,10]
+    num = random.randint(0,10)
+    print('So sinh ra co gia tri la: ',num)
+    # kiem tra num co bang 5 hay khong
+    if num == 5:
+        break;
+print('Da thoat khoi while')
+
+# While continue
+# Viết chương trình sinh ra 1 số nguyên, ngẫu nhiên n nằm trong đoạn [0, 10] và n khác 5.
+
+import random
+
+# cho vong lap chay vo tan
+while True:
+    # sinh so ngau nhien trong khoang [0,10]
+    num = random.randint(0,10)
+    # kiem tra num co bang 5 hay khong
+    if num == 5:
+        continue;
+    print('So sinh ra co gia tri la: ',num)
+    break;
