@@ -1,0 +1,64 @@
+my_list = [7, 8, 9, 2, 10, 9, 9, 9, 9, 4, 5, 6, 1, 5, 6, 7, 8, 6, 1, 10]
+
+# List slicing
+# truy cập một loạt các phần tử trong danh sách bằng cách sử dụng kỹ thuật slicing (cắt) cho list tu 0 --> 2
+print("1. ",my_list[:3])
+
+# Thay đổi (sửa ) giá trị của phần tử trong danh sách tai vi tri index
+my_list[1] = 9
+print("2. ",my_list)
+
+# Thêm phần tử mới vào cuoi danh sách
+my_list.append(11)
+print("3. ",my_list)
+
+# Chúng ta cũng có thể sử dụng toán tử + để kết hợp (hay nối) hai danh sách.
+temp_list = [3,3,3]
+total_list = my_list + temp_list
+print("4. ",total_list)
+
+# Toán tử * cho phép lặp lại một danh sách với số lần cho trước
+triple_list = temp_list * 3
+print("5. ",triple_list)
+
+# Chen phan tu vao list tai vi tri index 1 voi gia tri 10
+my_list.insert(1,10)
+print("6. ",my_list)
+
+# Xóa phần từ tu vi tri index 2 --> 3 khỏi danh sách.
+del my_list[2:4]
+print("7. ",my_list)
+
+# Chúng ta có thể sử dụng phương thức remove() để xóa mục đã cho, xoa phan tu dau tien tim duoc
+my_list.remove(9)
+print("8. ", my_list)
+
+# xóa một mục tại chỉ mục đã cho
+my_list.pop(5)
+print("9. ",my_list)
+
+# index() – Trả về vị trí đầu tiên
+print("10. ",my_list.index(9))
+
+# count() – Trả về số lần xuất hiện của một phần tử
+print("11. ",my_list.count(9))
+
+# sort() – Sắp xếp các phần tử tang dan
+my_list.sort()
+print("12. ",my_list)
+
+# sort() – Sắp xếp các phần tử giam dan
+my_list.sort(reverse=True)
+print("13. ",my_list)
+
+# reverse() – Đảo ngược vị trí các phần tử
+my_list.reverse()
+print("14. ",my_list)
+
+# copy() – copy một list
+my_list_copy = my_list.copy()
+print("15. ",my_list_copy)
+
+# làm trống danh sách
+my_list.clear()
+print("16. ",my_list)
